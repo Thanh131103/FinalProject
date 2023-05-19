@@ -1,7 +1,7 @@
 import streamlit as st 
 import pandas as pd
-from pages.overview import show_overview
-from pages.kMeans import run_kmeans
+from pages.kMeans import show_overview
+from pages.overview import run_kmeans
 st.set_page_config(
     page_title='Welcome',
     page_icon="👋"
