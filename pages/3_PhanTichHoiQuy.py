@@ -170,7 +170,7 @@ st.markdown(''' #### Correlation Matrix using HeatMap''')
 
 import seaborn as sns
 df_2016 = df[df.year > 2015] 
-cor = df_2016[['scores_overall','scores_teaching','scores_research','scores_citations','scores_industry_income','scores_international_outlook','stats_number_students', 'stats_student_staff_ratio','stats_female_male_ratio']].corr()
+cor = df_2016[['scores_overall','scores_teaching','scores_research','scores_citations','scores_industry_income','scores_international_outlook','stats_number_students', 'stats_student_staff_ratio','stats_female_male_ratio']].replace(",","").corr()
 mask = np.triu(np.ones_like(cor, dtype=bool))
 f, ax = plt.subplots(figsize=(11, 9))
 cmap = sns.diverging_palette(230, 20, as_cmap=True)
