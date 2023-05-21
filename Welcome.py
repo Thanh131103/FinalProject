@@ -42,3 +42,6 @@ if st.button("Go to DataVisualization"):
 if st.button("Go to Statistic"):
         url = "hhttps://thanh131103-finalproject-pagesoverview-3ox54x.streamlit.app/"
         webbrowser.open_new_tab(url)
+if st.button("Go to Regression Analysis"):
+        url = "https://thanh131103-finalproject-pages3-phantichhoiquy-9qrccs.streamlit.app/"
+        webbrowser.open_new_tab(url)
