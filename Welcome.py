@@ -33,8 +33,8 @@ Product of
 
 """
 )
-if st.button("Go to Classfication by k_means"):
-        url = "https://thanh131103-finalproject-pageskmeans-84fr05.streamlit.app/"
+if st.button("Go to Searching School"):
+        url = "https://thanh131103-finalproject-pagessearching-school-iwo4jw.streamlit.app/"
         webbrowser.open_new_tab(url)
 if st.button("Go to DataVisualization"):
         url = "https://thanh131103-finalproject-pages1-datavisualize-98pi7v.streamlit.app/"
