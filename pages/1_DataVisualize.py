@@ -141,7 +141,6 @@ st.markdown("-	Đại học Huế cũng là một Đại học được các b�
 st.markdown("## Radar Chart Điểm của các trường top 3 trường đại học thế giới và các trường đại học ở Việt Nam")
 import pandas as pd
 import streamlit.components.v1 as components
-import plotly.graph_objects as go
 
 path_file = 'data.csv' 
 df = pd.read_csv(path_file)
