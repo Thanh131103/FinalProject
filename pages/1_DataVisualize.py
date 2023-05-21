@@ -21,7 +21,7 @@ st.markdown("-	Nhìn chung Overall Scores của các Đại học biến thiên 
 st.markdown("-	Đại học Oxford vào năm 2011 có số điểm không quá cao (91.2), thua xa các Đại học còn lại. Đến năm 2012, số điểm lại tăng vọt (93.6). Tuy các năm 2015, 2018 và 2020, số điểm của Đại học Oxford có giảm nhẹ nhưng nhìn chung là tăng đột biến so với năm 2011. Từ năm 2017, Oxford luôn giữ vững vị thế Top 1 của mình với Overall Scores rất cao, có thể nói là cao hơn hẳn so với các trường top dưới. Đến năm 2023, số điểm ghi nhận của Oxford đạt tận 96.4, cao hơn khá nhiều so với các trường như Havard, Stanford,… (lần lượt là 95.2, 94.8, …).")
 st.markdown("-	Đại học Havard, nhìn vào biểu đồ tăng giảm điểm qua các năm, ta có thể nhận thấy “phong độ” của họ không ổn định khi đang là trường top 1 năm 2011 (với 96.1 điểm), qua các năm từ 2012 đến 2018, chất lượng của họ đi xuống khá nhiều, trong đó giai đoạn từ 2016 đến 2020, họ đã đánh mất top 1 của mình vào tay các Đại học khác và tuột xuống top 5. Mãi đến năm 2022 và 2023 gần đây, họ mới thực sự trở lại top 2 với số điểm 94.8 năm 2022 và 95.2 năm 2023.")
 
-st.markdown("## Change of Overal Score of University in VietNam over Year")
+st.markdown("## Change of Overal Score of University in VietNam over Year ")
 components.html('''<div class='tableauPlaceholder' id='viz1684588666530' style='position: relative'><noscript><a href='#'><img alt='Change of Overal Score of University in VietNam over Year  ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16844937289010&#47;Sheet22&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='School_16844937289010&#47;Sheet22' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16844937289010&#47;Sheet22&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1684588666530');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>''', width=1250, height=950)
 st.markdown("-	Nhìn chung, Overall Scores các Đại học của Việt Nam có mặt trong top ranking thế giới rất thấp, chỉ khoảng tầm 19-20 đến hơn 30 điểm (trên thang 100).")
 st.markdown("-	Đến năm 2020 mới có các Đại học được vào top ranking như Đại học Quốc gia TP.HCM, Đại học Quốc gia Hà Nội và Đại học Bách Khoa Hà Nội.")
@@ -47,8 +47,8 @@ st.markdown("- Có thể thấy rằng những môn học, ngành học trong bi
 st.markdown("## Number of subjects over Continents")
 components.html('''<div class='tableauPlaceholder' id='viz1684500200353' style='position: relative'><noscript><a href='#'><img alt='Number of subject over Continent  ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16844937289010&#47;Sheet16&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='School_16844937289010&#47;Sheet16' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16844937289010&#47;Sheet16&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1684500200353');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>''', width=1000, height=750)
 st.markdown("## Nhận xét:")
-st.markdown("-  Nhìn chung, ngành Computer Science các năm gần đây đang rất được quan tâm và chú trọng đào tạo rất nhiều bởi các trường Đại học ở tất cả các khu vực và châu lục. Kế đến là Business & Management, các ngành về Sinh học, Hoá học, Toán học, Kinh tế - Tài chính và Ngôn ngữ - Văn học.")
-st.markdown("-  Phân bố các môn học giữa các châu lục khá đồng đều nhau, một môn học có thể được dạy ở nhiều châu lục khác nhau, tạo điều kiện cho sinh viên có thể dễ dàng tiếp cận mà không cần bắt buộc đi du học. Đồng thời các môn học có số trường dạy gần như đồng đều. Điều này thể hiện các trường đại học quan tâm, điều này cũng tạo điều kiện cho sinh viên có thể tìm kiếm trường đại học dạy chuyên ngành mong muốn. Europe và Asia là 2 châu lục tập trung nhiều trường đại học và đào tạo nhiều ngành học.")
+st.markdown("Nhìn chung, ngành Computer Science các năm gần đây đang rất được quan tâm và chú trọng đào tạo rất nhiều bởi các trường Đại học ở tất cả các khu vực và châu lục. Kế đến là Business & Management, các ngành về Sinh học, Hoá học, Toán học, Kinh tế - Tài chính và Ngôn ngữ - Văn học.")
+st.markdown("Phân bố các môn học giữa các châu lục khá đồng đều nhau, một môn học có thể được dạy ở nhiều châu lục khác nhau, tạo điều kiện cho sinh viên có thể dễ dàng tiếp cận mà không cần bắt buộc đi du học. Đồng thời các môn học có số trường dạy gần như đồng đều. Điều này thể hiện các trường đại quan tâm, điều này cũng tạo điều kiện cho sinh viên có thể tìm kiếm trường đại học dạy chuyên ngành mong muốn. Europe và Asia là 2 châu lục tập trung nhiều trường đại học và đào tạo nhiều ngành học")
 
 st.markdown("# Quan hệ giữa hai biến")
 
@@ -86,23 +86,23 @@ st.markdown("-	Nhìn vào hình ảnh ta có thể thấy, United Kingdom, Unite
 st.markdown("-	Tiếp đến là Russia (103), China (95), India (101) và Turkey (80) cũng có kha khá trường lọt vào danh sách ranking.")
 
 st.markdown("## Number of Universities and Average Score Overall group by Continent over Year")
-components.html('''<div class='tableauPlaceholder' id='viz1684495560197' style='position: relative'><noscript><a href='#'><img alt='Number of country and avg Score Overall of Continent  ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16844937289010&#47;Sheet14&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='School_16844937289010&#47;Sheet14' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16844937289010&#47;Sheet14&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1684495560197');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>''', height=900, width = 1300)
+components.html('''<div class='tableauPlaceholder' id='viz1684495560197' style='position: relative'><noscript><a href='#'><img alt='Number of country and avg Score Overall of Continent  ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16844937289010&#47;Sheet14&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='School_16844937289010&#47;Sheet14' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16844937289010&#47;Sheet14&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1684495560197');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>''', height=950, width = 1300)
 st.markdown("## Nhận xét:")
 st.markdown("- Nhìn chung, khu vực châu Âu và Bắc Mỹ có nền giáo dục rất tiên tiến và phát triển khi đóng góp số lượng lớn trường Đại học vào danh sách World Ranking Universities.")
-st.markdown("- Ở châu Âu, có hơn 180 trường Đại học có mặt trong danh sách, con số này gấp 3 lần với châu Á khi khu vực này chỉ có hơn 60 trường Đại học nằm trong top đầu thế giới.")
-st.markdown("- Ở Bắc Mỹ, khu vực này cũng có hơn 130 trường Đại học trong World Ranking. Tuy nhiên, dù có số lượng trường Đại học được vào top ít hơn so với châu Âu nhưng Average Overall Score của Bắc Mỹ lại cao hơn rất nhiều với số điểm 40.4, gấp đôi so với con số 26.14 của châu Âu. Vậy có thể kết luận rằng, nền giáo dục bậc Đại học ở Bắc Mỹ là tốt nhất thế giới, là mơ ước của hàng triệu sinh viên.")
-st.markdown("- Đối lập với Bắc Mỹ, khu vực Nam Mỹ chỉ có 3 trường Đại học trong danh sách và Average Overall Score của họ thuộc hàng thấp nhất thế giới. Bên cạnh đó tuy châu Phi cũng chỉ có 3 trường nhưng Average Overall Score lại cao ngang ngửa so với châu Đại Dương (18.78) và châu Á (18.75) với số điểm là 16.83.")
+st.markdown("Ở châu Âu, có hơn 180 trường Đại học có mặt trong danh sách, con số này gấp 3 lần với châu Á khi khu vực này chỉ có hơn 60 trường Đại học nằm trong top đầu thế giới.")
+st.markdown("Ở Bắc Mỹ, khu vực này cũng có hơn 130 trường Đại học trong World Ranking. Tuy nhiên, dù có số lượng trường Đại học được vào top ít hơn so với châu Âu nhưng Average Overall Score của Bắc Mỹ lại cao hơn rất nhiều với số điểm 40.4, gấp đôi so với con số 26.14 của châu Âu. Vậy có thể kết luận rằng, nền giáo dục bậc Đại học ở Bắc Mỹ là tốt nhất thế giới, là mơ ước của hàng triệu sinh viên.")
+st.markdown("Đối lập với Bắc Mỹ, khu vực Nam Mỹ chỉ có 3 trường Đại học trong danh sách và Average Overall Score của họ thuộc hàng thấp nhất thế giới. Bên cạnh đó tuy châu Phi cũng chỉ có 3 trường nhưng Average Overall Score lại cao ngang ngửa so với châu Đại Dương (18.78) và châu Á (18.75) với số điểm là 16.83.")
 
 st.markdown("## Histogram of Score Industry Income and International Outlook")
 components.html('''<div class='tableauPlaceholder' id='viz1684494899807' style='position: relative'><noscript><a href='#'><img alt='Histogram of Score Industry Income and International Outlook ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16844937289010&#47;Sheet7&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='School_16844937289010&#47;Sheet7' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16844937289010&#47;Sheet7&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1684494899807');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>''', width=1000, height=800)
 st.markdown("## Nhận xét:")
-st.markdown("-  Phân bố của Scores Industry Income và Scores International Outlook gần giống nhau. Hầu hết các trường đại học có điểm từ 34 tới 40 điểm và có nhiều trường đại học có điểm số rãi rác từ 40 tới 100 điểm.")
-st.markdown("-  Màu sắc trong  biểu đồ thể hiện trung bình overall scores. Màu sắc càng đậm thì overall scores càng cao. Chủ yếu màu sắc của phần biểu đồ bên phải đậm hơn bên trang điều này cho tuy không đồng đều nhưng  các quôc gia có xu hướng có  Industry Income và International Outlook thì overall scores cũng cao.")
+st.markdown("- Phân bố của Scores Industry Income và Scores International Outlook gần giống nhau. Hầu hết các trường đại học có điểm từ 34 tới 40 điểm và có nhiều trường đại học có điểm số rãi rác từ 40 tới 100 điểm.")
+st.markdown("- Màu sắc trong  biểu đồ thể hiện trung bình overall scores. Màu sắc càng đậm thì overall scores càng cao. Chủ yếu màu sắc của phần biểu đồ bên phải đậm hơn bên trang điều này cho tuy không đồng đều nhưng  các quôc gia có xu hướng có  Industry Income và International Outlook thì overall scores cũng cao.")
 
 st.markdown("## Correlation between Scores Overall and Score Teaching")
 components.html('''<div class='tableauPlaceholder' id='viz1684494957465' style='position: relative'><noscript><a href='#'><img alt='Correlation between Scores Overall and Score Teaching  ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16844937289010&#47;Sheet8&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='School_16844937289010&#47;Sheet8' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16844937289010&#47;Sheet8&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1684494957465');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>''', width=1000, height=800)
 st.markdown("## Nhận xét:")
-st.markdown("-  Scores Overall và Score Teaching có quan hệ tuyến tính dương với nhau. Khi Score Teaching tăng thì Score Overall cũng tăng. Đồng thời độ lớn của các chấm tròn biểu thị cho tỉ lệ Int Student. Nhưng phân bố độ lớn nhỏ không liên quan tới sự biến thiên của Scores Overall và Score Teaching")
+st.markdown("- Scores Overall và Score Teaching có quan hệ tuyến tính dương với nhau. Khi Score Teaching tăng thì Score Overall cũng tăng. Đồng thời độ lớn của các chấm tròn biểu thị cho tỉ lệ Int Student. Nhưng phân bố độ lớn nhỏ không liên quan tới sự biến thiên của Scores Overall và Score Teaching")
 
 st.markdown("# Quan hệ giữa ba biến")
 
@@ -115,8 +115,8 @@ st.markdown("-	Tuy nhiên, tỉ lệ giữa số sinh viên và giảng viên l�
 st.markdown("## Correlation between Score Overall and Score Teaching and Score Research")
 components.html('''<div class='tableauPlaceholder' id='viz1684495204347' style='position: relative'><noscript><a href='#'><img alt='Correlation between Score Overall and Score Teaching and Score Research  ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16844937289010&#47;Sheet9&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='School_16844937289010&#47;Sheet9' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16844937289010&#47;Sheet9&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1684495204347');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>''', width=1000, height=800)
 st.markdown("## Nhận xét:")
-st.markdown("-  Nhìn chung Score Overall và Score Teaching và Score Research có quan hệ tương quan dương với nhau.")
-st.markdown("-  Đa phần các điểm tập trung nhiều và phân tán ở đoạn scores overall có giá trị từ 20 tới 50 và tập trung thưa hơn khi scores Overall cao.")
+st.markdown("- Nhìn chung Score Overall và Score Teaching và Score Research có quan hệ tương quan dương với nhau.")
+st.markdown("- Đa phần các điểm tập trung nhiều và phân tán ở đoạn scores overall có giá trị từ 20 tới 50 và tập trung thưa hơn khi scores Overall cao.")
 
 st.markdown("## Correlation between Score Overall and Score Industry Income and Score Citations")
 components.html('''<div class='tableauPlaceholder' id='viz1684495250347' style='position: relative'><noscript><a href='#'><img alt='Correlation between Score Overall and Score Industry Income and Score Citations   ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16844937289010&#47;Sheet10&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='School_16844937289010&#47;Sheet10' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16844937289010&#47;Sheet10&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1684495250347');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>''', width=1000, height=800)
@@ -136,3 +136,125 @@ components.html('''<div class='tableauPlaceholder' id='viz1684495342804' style='
 st.markdown("## Nhận xét:")
 st.markdown("-	Đại học Quốc gia TP.HCM có số lượng sinh viên trung bình qua các năm khá cao (hơn 69000 sinh viên theo học mỗi năm). Con số này gần gấp đôi Đại học Quốc gia Hà Nội (hơn 32000 sinh viên).")
 st.markdown("-	Đại học Huế cũng là một Đại học được các bạn sinh viên lựa chọn theo học khi lượng sinh viên trung bình mỗi năm vào khoảng hơn 47500.")
+
+
+st.markdown("## Radar Chart Điểm của các trường top 3 trường đại học thế giới và các trường đại học ở Việt Nam")
+import pandas as pd
+import streamlit.components.v1 as components
+import plotly.graph_objects as go
+
+path_file = 'data.csv' 
+df = pd.read_csv(path_file)
+topthree = df[df.year == 2023][:3]
+categories = ['scores_overall','scores_teaching','scores_research','scores_citations','scores_industry_income','scores_international_outlook']
+
+fig = go.Figure()
+
+fig.add_trace(go.Scatterpolar(
+      r=topthree.iloc[0][categories].to_list(),
+      theta=categories,
+      fill='toself',
+      name=topthree.iloc[0].loc['name']
+))
+fig.add_trace(go.Scatterpolar(
+      r=topthree.iloc[1][categories].to_list(),
+      theta=categories,
+      fill='toself',
+      name=topthree.iloc[1].loc['name']
+))
+
+fig.add_trace(go.Scatterpolar(
+      r=topthree.iloc[2][categories].to_list(),
+      theta=categories,
+      fill='toself',
+      name=topthree.iloc[2].loc['name']
+))
+
+fig.update_layout(
+  polar=dict(
+    radialaxis=dict(
+      visible=True,
+      range=[30, 100]
+    )),
+  showlegend=True
+)
+
+
+st.plotly_chart(fig)
+st.markdown("## Nhận xét:")
+st.markdown("-	Dựa vào Radar chart này, có thể thấy Research scores, Teaching scores và Citations Scores của 3 trường top đầu thế giới đều hoàn hảo khi điểm của họ gần đạt tuyệt đối.")
+st.markdown("-	Tuy nhiên, Industry income scores của họ khá thấp.")
+
+
+topthree = df[(df.location == 'Vietnam') & (df.year == 2023)]
+categories = ['scores_overall','scores_teaching','scores_research','scores_citations','scores_industry_income','scores_international_outlook']
+
+fig = go.Figure()
+
+fig.add_trace(go.Scatterpolar(
+      r=topthree.iloc[0][categories].to_list(),
+      theta=categories,
+      fill='toself',
+      name=topthree.iloc[0].loc['name']
+))
+fig.add_trace(go.Scatterpolar(
+      r=topthree.iloc[1][categories].to_list(),
+      theta=categories,
+      fill='toself',
+      name=topthree.iloc[1].loc['name']
+))
+
+fig.add_trace(go.Scatterpolar(
+      r=topthree.iloc[2][categories].to_list(),
+      theta=categories,
+      fill='toself',
+      name=topthree.iloc[2].loc['name']
+))
+
+fig.update_layout(
+  polar=dict(
+    radialaxis=dict(
+      visible=True,
+      range=[30, 100]
+    )),
+  showlegend=True
+)
+
+st.plotly_chart(fig)
+
+
+topthree = df[(df.location == 'Vietnam') & (df.year == 2023)]
+categories = ['scores_overall','scores_teaching','scores_research','scores_citations','scores_industry_income','scores_international_outlook']
+
+fig = go.Figure()
+
+fig.add_trace(go.Scatterpolar(
+      r=topthree.iloc[0][categories].to_list(),
+      theta=categories,
+      fill='toself',
+      name=topthree.iloc[3].loc['name']
+))
+fig.add_trace(go.Scatterpolar(
+      r=topthree.iloc[1][categories].to_list(),
+      theta=categories,
+      fill='toself',
+      name=topthree.iloc[4].loc['name']
+))
+
+fig.add_trace(go.Scatterpolar(
+      r=topthree.iloc[2][categories].to_list(),
+      theta=categories,
+      fill='toself',
+      name=topthree.iloc[5].loc['name']
+))
+
+fig.update_layout(
+  polar=dict(
+    radialaxis=dict(
+      visible=True,
+      range=[30, 100]
+    )),
+  showlegend=True
+)
+
+st.plotly_chart(fig)

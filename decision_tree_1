@@ -1,0 +1,29 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label=<scores_overall &le; 61.95<br/>gini = 0.145<br/>samples = 7052<br/>value = [6499, 553]<br/>class = False>, fillcolor="#e78c4a"] ;
+1 [label=<scores_overall &le; 60.25<br/>gini = 0.012<br/>samples = 6526<br/>value = [6487, 39]<br/>class = False>, fillcolor="#e5823a"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<scores_overall &le; 59.65<br/>gini = 0.002<br/>samples = 6446<br/>value = [6439, 7]<br/>class = False>, fillcolor="#e58139"] ;
+1 -> 2 ;
+3 [label=<gini = 0.001<br/>samples = 6417<br/>value = [6414, 3]<br/>class = False>, fillcolor="#e58139"] ;
+2 -> 3 ;
+4 [label=<gini = 0.238<br/>samples = 29<br/>value = [25, 4]<br/>class = False>, fillcolor="#e99559"] ;
+2 -> 4 ;
+5 [label=<scores_research &le; 47.15<br/>gini = 0.48<br/>samples = 80<br/>value = [48, 32]<br/>class = False>, fillcolor="#f6d5bd"] ;
+1 -> 5 ;
+6 [label=<gini = 0.342<br/>samples = 32<br/>value = [25, 7]<br/>class = False>, fillcolor="#eca470"] ;
+5 -> 6 ;
+7 [label=<gini = 0.499<br/>samples = 48<br/>value = [23, 25]<br/>class = True>, fillcolor="#eff7fd"] ;
+5 -> 7 ;
+8 [label=<scores_overall &le; 63.05<br/>gini = 0.045<br/>samples = 526<br/>value = [12, 514]<br/>class = True>, fillcolor="#3e9fe6"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label=<scores_teaching &le; 56.35<br/>gini = 0.355<br/>samples = 52<br/>value = [12, 40]<br/>class = True>, fillcolor="#74baed"] ;
+8 -> 9 ;
+10 [label=<gini = 0.42<br/>samples = 40<br/>value = [12, 28]<br/>class = True>, fillcolor="#8ec7f0"] ;
+9 -> 10 ;
+11 [label=<gini = 0.0<br/>samples = 12<br/>value = [0, 12]<br/>class = True>, fillcolor="#399de5"] ;
+9 -> 11 ;
+12 [label=<gini = 0.0<br/>samples = 474<br/>value = [0, 474]<br/>class = True>, fillcolor="#399de5"] ;
+8 -> 12 ;
+}

@@ -1,5 +1,12 @@
 import streamlit as st
 import streamlit.components.v1 as components
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
+import streamlit.components.v1 as components
+
+
+# Introduction
 
 st.set_page_config(page_title='Searching Schools')
 st.write("SEARCHING SCHOOLS")
@@ -14,6 +21,14 @@ Do đó muốn nâng cao overall score cần phải tập trung nâng cao chất
 có các công bố khoa học trên các tạp chí và hội nghị quốc tế. 
 
 Ngoài ra teaching scores và research scores có quan hệ  tương quan dương với nhau biểu thị việc giảng dạy đi đôi với việc nghiên cứu khoa học. 
+''')
+
+img = Image.open('images/vnm.jpg')
+st.image(img, use_column_width=True)
+
+st.markdown('''
+Các trường đại học có thể bị loại khỏi Bảng xếp hạng THE nếu không đào tạo cử nhân, hoặc nếu số nghiên cứu của trường đó đạt ít hơn 1.000 bài báo khoa học từ năm 2014 đến 2018 (với tối thiểu 150 bài/năm). 
+Các trường đại học cũng sẽ bị loại nếu từ 80% nghiên cứu trở lên chỉ thuộc về một trong 11 lĩnh vực chủ đề của THE.
 
 Từ các biểu đồ có thể thấy Việt Nam có các chỉ số về teaching scores, research, citations thấp, dưới 50 điểm. 
 Do đó cần tập trung tăng cường việc dạy học và nghiên cứu để có điểm và thứ hạng cao hơn. 
@@ -25,7 +40,7 @@ Do đó cần tập trung tăng cường việc dạy học và nghiên cứu đ
 
 - Xây dựng mạng lưới hợp tác quốc tế: Các trường đại học cần tăng cường quan hệ hợp tác với các trường đại học và viện nghiên cứu quốc tế. Việc hợp tác này có thể bao gồm trao đổi giảng viên và sinh viên, chia sẻ tài liệu và công trình nghiên cứu, và thực hiện các dự án chung. Điều này sẽ giúp mở rộng phạm vi nghiên cứu và tiếp cận nguồn lực và kiến thức quốc tế.
 
-- Đánh giá và đánh giá chất lượng: Hệ thống đánh giá chất lượng giáo dục và nghiên cứu cần được tăng cường và thực hiện một cách công bằng và minh bạch. Điều này giúp tạo động lực cho các trường đại học cải thiện chất lượng dạy học và nghiên cứu, đồng thời cung cấp thông tin đáng tin cậy để phụ huynh và sinh viên có thể lựa chọn trường phù hợp với mình.
+- Đánh giá chất lượng: Hệ thống đánh giá chất lượng giáo dục và nghiên cứu cần được tăng cường và thực hiện một cách công bằng và minh bạch. Điều này giúp tạo động lực cho các trường đại học cải thiện chất lượng dạy học và nghiên cứu, đồng thời cung cấp thông tin đáng tin cậy để phụ huynh và sinh viên có thể lựa chọn trường phù hợp với mình.
 
-- SĐào tạo và phát triển giảng viên: Các trường đại học cần đầu tư vào đào tạo và phát triển giảng viên để nâng cao năng lực giảng dạy và nghiên cứu. Điều này có thể bao gồm chương trình đào tạo chuyên sâu, khuyến khích tham gia vào các khóa học và hội thảo, và tạo điều kiện để giảng viên phát triển sự nghiệp trong lĩnh vực của mình.
+- Thu hút nhân tài và đào tạo giảng viên: Các trường đại học cần đầu tư vào đào tạo và phát triển giảng viên để nâng cao năng lực giảng dạy và nghiên cứu. Điều này có thể bao gồm chương trình đào tạo chuyên sâu, khuyến khích tham gia vào các khóa học và hội thảo, và tạo điều kiện để giảng viên phát triển sự nghiệp trong lĩnh vực của mình.
 ''')

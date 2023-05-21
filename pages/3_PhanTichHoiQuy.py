@@ -4,7 +4,6 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 import streamlit.components.v1 as components
-import plotly.graph_objects as go
 
 
 st.set_page_config(page_title="Overview")
@@ -95,8 +94,94 @@ st.markdown('''
 
 results = smf.ols('Q("stats_number_students") ~ scores_overall + scores_teaching + scores_research  + scores_industry_income + scores_international_outlook ', data=df1).fit()
 st.write(results.summary())
-st.markdown('''Từ kết quả phân tích có thể thấy ```scores_overall``` , ```scores_teaching``` , ```scores_research```  , ```scores_industry_income``` ,```scores_international_outlook``` không có tác động tới ```stats_number_students``` và không thể mô tả ``` stats_number_students``
+st.markdown('''Từ kết quả phân tích có thể thấy ```scores_overall``` , ```scores_teaching``` , ```scores_research```  , ```scores_industry_income``` ,```scores_international_outlook``` không có tác động tới ```stats_number_students``` và không thể mô tả ``` stats_number_students```
 ''')
+
+
+st.markdown('''
+ ###   4. Predict rank of a univerity below 100 
+##### Rank của trường đại học phụ thuộc vào  ```scores_overall``` nên tập thuộc tính dùng để dự đoán bao gồm ```scores_overall``` , ```scores_teaching``` , ```scores_research```  , ```scores_industry_income``` ,```scores_international_outlook```.
+    Thực hiện bài toán phân lớp sử dụng cây quyết định với nhãn là 1 (tương ứng với rank <= 100) và 0 (tương ứng với rank > 100)
+    ''')
+df_2016 = df[df.year > 2015]
+df_2016.loc[df_2016['rank']<=100,'rank_less_100'] = 1
+df_2016.loc[df_2016['rank']>100,'rank_less_100'] = 0
+
+X = df_2016[['scores_overall','scores_teaching','scores_research','scores_citations','scores_industry_income','scores_international_outlook']]
+y = df_2016['rank_less_100']
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.33, random_state = 42)
+
+class_0_indices = np.where(y_test == 0)[0]
+class_1_indices = np.where(y_test == 1)[0]
+
+random_class_0_indices = np.random.choice(class_0_indices, 250, replace=False)
+selected_indices = np.concatenate((random_class_0_indices, class_1_indices))
+
+# Get the corresponding rows from feature matrix x
+random_X = X_test.iloc[selected_indices]
+random_y = y_test.iloc[selected_indices]
+
+from sklearn import tree
+from sklearn.model_selection import cross_validate
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+
+clf_gini = DecisionTreeClassifier(criterion='gini', max_depth=3, random_state=0)
+clf_gini.fit(X_train, y_train)
+y_pred_train_gini = clf_gini.predict(X_train)
+st.text('Training-set accuracy score: {0:0.4f}'. format(accuracy_score(y_train, y_pred_train_gini)))
+
+y_pred_en = clf_gini.predict(random_X)
+
+st.text('Test-set accuracy score: {0:0.4f}'. format(accuracy_score(random_y, y_pred_en)))
+
+import graphviz 
+
+dot_data = tree.export_graphviz(clf_gini,
+               feature_names = X_train.columns, 
+               class_names=['False','True'], filled=True, rounded=True,  
+                              special_characters=True);
+
+graph = graphviz.Source(dot_data) 
+graph.render("decision_tree_1", format="png", cleanup=True)
+from PIL import Image
+st.image("decision_tree_1.png", use_column_width=True)
+st.markdown('''
+    Từ cây quyết định có thể thấy ```overall_scores``` quyết định rank của trường đại học. Để đạt được thứ hạng dưới 100, 
+    các trường đại học phải có điểm overall > 63.05 hoặc điểm ```scores_research``` ít nhất nhất lơn 47.15
+    ''')
+
+st.markdown('''
+##### ```Overall_score``` có quan hệ với các thuộc tính còn lại. Do đó có thể thực hiện phân lớp rank mà không sử dụng thuộc tính ```Overall_score``` 
+    ''')
+
+X_train = X_train[['scores_teaching','scores_research','scores_citations','scores_industry_income','scores_international_outlook']]
+
+# Get the corresponding rows from feature matrix x
+random_X = random_X[['scores_teaching','scores_research','scores_citations','scores_industry_income','scores_international_outlook']]
+
+clf_gini = DecisionTreeClassifier(criterion='gini', max_depth=3, random_state=0)
+clf_gini.fit(X_train, y_train)
+y_pred_train_gini = clf_gini.predict(X_train)
+st.text('Training-set accuracy score: {0:0.4f}'. format(accuracy_score(y_train, y_pred_train_gini)))
+
+y_pred_en = clf_gini.predict(random_X)
+
+st.text('Test-set accuracy score: {0:0.4f}'. format(accuracy_score(random_y, y_pred_en)))
+
+
+dot_data = tree.export_graphviz(clf_gini,
+               feature_names = X_train.columns, 
+               class_names=['False','True'], filled=True, rounded=True,  
+                              special_characters=True);
+
+graph = graphviz.Source(dot_data) 
+graph.render("decision_tree_1", format="png", cleanup=True)
+st.image("decision_tree_1.png", use_column_width=True)
+st.markdown('''
+    Loại bỏ ```Overall_score``` không làm giảm độ chính xác của mô hình nhiều. Do đó, có thể xác định yếu tố giúp một trường đại học nằm trong top 100 bao gồm ```scores_research```,```scores_teaching```,```scores_citations```
+    ''')
 
 st.markdown(''' #### Correlation Matrix using HeatMap''')
 
@@ -118,116 +203,3 @@ st.markdown('''Từ kết quả trực quan có thể thấy ```score_overall```
 
 # src = "https://public.tableau.com/views/MarketingDashboard_16631517860700/DigitalMarketing?:embed=y&:display_count=yes&:toolbar=no&:origin=viz_share_link&:showVizHome=no"
 # components.html('''<div class='tableauPlaceholder' id='viz1684483334235' style='position: relative'><noscript><a href='#'><img alt='Top University over year by Overall Score  ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16843000630040&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='School_16843000630040&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='no' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sc&#47;School_16843000630040&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='origin' value='viz_share_link' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1684483334235');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>''',height=768,width = 1300)
-
-topthree = df[df.year == 2023][:3]
-categories = ['scores_overall','scores_teaching','scores_research','scores_citations','scores_industry_income','scores_international_outlook']
-
-fig = go.Figure()
-
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[0][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[0].loc['name']
-))
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[1][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[1].loc['name']
-))
-
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[2][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[2].loc['name']
-))
-
-fig.update_layout(
-  polar=dict(
-    radialaxis=dict(
-      visible=True,
-      range=[30, 100]
-    )),
-  showlegend=True
-)
-
-st.pyplot(fig)
-st.markdown("## Nhận xét:")
-st.markdown("-	Dựa vào Radar chart này, có thể thấy Research scores, Teaching scores và Citations Scores của 3 trường top đầu thế giới đều hoàn hảo khi điểm của họ gần đạt tuyệt đối.")
-st.markdown("-	Tuy nhiên, Industry income scores của họ khá thấp.")
-
-
-topthree = df[(df.location == 'Vietnam') & (df.year == 2023)]
-categories = ['scores_overall','scores_teaching','scores_research','scores_citations','scores_industry_income','scores_international_outlook']
-
-fig = go.Figure()
-
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[0][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[0].loc['name']
-))
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[1][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[1].loc['name']
-))
-
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[2][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[2].loc['name']
-))
-
-fig.update_layout(
-  polar=dict(
-    radialaxis=dict(
-      visible=True,
-      range=[30, 100]
-    )),
-  showlegend=True
-)
-
-st.pyplot(fig)
-
-
-topthree = df[(df.location == 'Vietnam') & (df.year == 2023)]
-categories = ['scores_overall','scores_teaching','scores_research','scores_citations','scores_industry_income','scores_international_outlook']
-
-fig = go.Figure()
-
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[0][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[3].loc['name']
-))
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[1][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[4].loc['name']
-))
-
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[2][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[5].loc['name']
-))
-
-fig.update_layout(
-  polar=dict(
-    radialaxis=dict(
-      visible=True,
-      range=[30, 100]
-    )),
-  showlegend=True
-)
-
-st.pyplot(fig)
