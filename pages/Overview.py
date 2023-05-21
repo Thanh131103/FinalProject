@@ -67,11 +67,37 @@ st.markdown("Shape and Quantity of duplicated data")
 df_ex = pd.DataFrame([df.shape[0], df.shape[1], df.duplicated().sum()],
                      index=['Rows', 'Columns', 'Duplicated Rows'], columns=['Quantity'])
 st.dataframe(df_ex)
+st.markdown(f"This data set has {df.shape[0]} row and {df.shape[1]} Columns and also not have any dulicated row")
 
 st.markdown("## Data Types")
 dtypes = pd.DataFrame([df.dtypes])
 st.dataframe(dtypes.astype(str))
+st.markdown("""
+1. `rank_order`: int64
+2. `rank`: int64
+3. `name`: object
+4. `scores_overall`: float64
+5. `scores_overall_rank`: int64
+6. `scores_teaching`: float64
+7. `scores_teaching_rank`: int64
+8. `scores_research`: float64
+9. `scores_research_rank`: int64
+10. `scores_citations`: float64
+11. `scores_citations_rank`: int64
+12. `scores_industry_income`: float64
+13. `scores_industry_income_rank`: int64
+14. `scores_international_outlook`: float64
+15. `scores_international_outlook_rank`: int64
+16. `location`: object
+17. `stats_number_students`: int64
+18. `stats_student_staff_ratio`: float64
+19. `stats_pc_intl_students`: float64
+20. `stats_female_male_ratio`: object
+21. `aliases`: object
+22. `subjects_offered`: object
+23. `year`: int64
 
+""")
 st.markdown("## Numeric columns")
 nume_col_list = list(df.select_dtypes(include='float64'))
 nume_df = df[nume_col_list]
