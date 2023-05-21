@@ -148,39 +148,7 @@ df = pd.read_csv(path_file)
 topthree = df[df.year == 2023][:3]
 categories = ['scores_overall','scores_teaching','scores_research','scores_citations','scores_industry_income','scores_international_outlook']
 
-fig = go.Figure()
-
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[0][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[0].loc['name']
-))
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[1][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[1].loc['name']
-))
-
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[2][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[2].loc['name']
-))
-
-fig.update_layout(
-  polar=dict(
-    radialaxis=dict(
-      visible=True,
-      range=[30, 100]
-    )),
-  showlegend=True
-)
-
-
-st.plotly_chart(fig)
+st.image('4.png',use_column_width=True)
 st.markdown("## Nhận xét:")
 st.markdown("-	Dựa vào Radar chart này, có thể thấy Research scores, Teaching scores và Citations Scores của 3 trường top đầu thế giới đều hoàn hảo khi điểm của họ gần đạt tuyệt đối.")
 st.markdown("-	Tuy nhiên, Industry income scores của họ khá thấp.")
@@ -189,72 +157,10 @@ st.markdown("-	Tuy nhiên, Industry income scores của họ khá thấp.")
 topthree = df[(df.location == 'Vietnam') & (df.year == 2023)]
 categories = ['scores_overall','scores_teaching','scores_research','scores_citations','scores_industry_income','scores_international_outlook']
 
-fig = go.Figure()
-
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[0][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[0].loc['name']
-))
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[1][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[1].loc['name']
-))
-
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[2][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[2].loc['name']
-))
-
-fig.update_layout(
-  polar=dict(
-    radialaxis=dict(
-      visible=True,
-      range=[30, 100]
-    )),
-  showlegend=True
-)
-
-st.plotly_chart(fig)
+st.image("5.png",use_column_width=True)
 
 
 topthree = df[(df.location == 'Vietnam') & (df.year == 2023)]
 categories = ['scores_overall','scores_teaching','scores_research','scores_citations','scores_industry_income','scores_international_outlook']
 
-fig = go.Figure()
-
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[0][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[3].loc['name']
-))
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[1][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[4].loc['name']
-))
-
-fig.add_trace(go.Scatterpolar(
-      r=topthree.iloc[2][categories].to_list(),
-      theta=categories,
-      fill='toself',
-      name=topthree.iloc[5].loc['name']
-))
-
-fig.update_layout(
-  polar=dict(
-    radialaxis=dict(
-      visible=True,
-      range=[30, 100]
-    )),
-  showlegend=True
-)
-
-st.plotly_chart(fig)
+st.image("6.png",use_column_width=True)
