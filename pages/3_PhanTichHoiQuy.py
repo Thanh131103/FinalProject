@@ -136,17 +136,8 @@ y_pred_en = clf_gini.predict(random_X)
 
 st.text('Test-set accuracy score: {0:0.4f}'. format(accuracy_score(random_y, y_pred_en)))
 
-import graphviz 
-
-dot_data = tree.export_graphviz(clf_gini,
-               feature_names = X_train.columns, 
-               class_names=['False','True'], filled=True, rounded=True,  
-                              special_characters=True);
-
-graph = graphviz.Source(dot_data) 
-graph.render("decision_tree_1", format="png", cleanup=True)
 from PIL import Image
-st.image("decision_tree_1.png", use_column_width=True)
+st.image("1.png", use_column_width=True)
 st.markdown('''
     Từ cây quyết định có thể thấy ```overall_scores``` quyết định rank của trường đại học. Để đạt được thứ hạng dưới 100, 
     các trường đại học phải có điểm overall > 63.05 hoặc điểm ```scores_research``` ít nhất nhất lơn 47.15
@@ -170,15 +161,7 @@ y_pred_en = clf_gini.predict(random_X)
 
 st.text('Test-set accuracy score: {0:0.4f}'. format(accuracy_score(random_y, y_pred_en)))
 
-
-dot_data = tree.export_graphviz(clf_gini,
-               feature_names = X_train.columns, 
-               class_names=['False','True'], filled=True, rounded=True,  
-                              special_characters=True);
-
-graph = graphviz.Source(dot_data) 
-graph.render("decision_tree_1", format="png", cleanup=True)
-st.image("decision_tree_1.png", use_column_width=True)
+st.image("2.png", use_column_width=True)
 st.markdown('''
     Loại bỏ ```Overall_score``` không làm giảm độ chính xác của mô hình nhiều. Do đó, có thể xác định yếu tố giúp một trường đại học nằm trong top 100 bao gồm ```scores_research```,```scores_teaching```,```scores_citations```
     ''')
