@@ -169,18 +169,18 @@ st.markdown('''
 st.markdown(''' #### Correlation Matrix using HeatMap''')
 
 import seaborn as sns
-df_2016 = df[df.year > 2015] 
-cor = df_2016[['scores_overall','scores_teaching','scores_research','scores_citations','scores_industry_income','scores_international_outlook','stats_number_students', 'stats_student_staff_ratio','stats_female_male_ratio']].replace(",","").corr()
-mask = np.triu(np.ones_like(cor, dtype=bool))
-f, ax = plt.subplots(figsize=(11, 9))
-cmap = sns.diverging_palette(230, 20, as_cmap=True)
+# df_2016 = df[df.year > 2015] 
+# cor = df_2016[['scores_overall','scores_teaching','scores_research','scores_citations','scores_industry_income','scores_international_outlook','stats_number_students', 'stats_student_staff_ratio','stats_female_male_ratio']].replace(",","").corr()
+# mask = np.triu(np.ones_like(cor, dtype=bool))
+# f, ax = plt.subplots(figsize=(11, 9))
+# cmap = sns.diverging_palette(230, 20, as_cmap=True)
 
 
-sns.heatmap(cor,annot=True, mask=mask, cmap=cmap, vmax=.3, center=0,
-            square=True, linewidths=.5, cbar_kws={"shrink": .5})
-plt.title("Correlation Matrix using HeatMap",fontweight="bold")
-st.pyplot(f)
-
+# sns.heatmap(cor,annot=True, mask=mask, cmap=cmap, vmax=.3, center=0,
+#             square=True, linewidths=.5, cbar_kws={"shrink": .5})
+# plt.title("Correlation Matrix using HeatMap",fontweight="bold")
+# st.pyplot(f)
+st.image("3.png", use_column_width=True)
 st.markdown('''Từ kết quả trực quan có thể thấy ```score_overall```, ```scores_teaching``` , ```scores_research```, ```scores_citations``` có quan hệ tương quan dương với nhau, ```stats_number_students``` có quan hệ tương quan dương với ```stats_student_staff_ratio```. 
 ''')
 
